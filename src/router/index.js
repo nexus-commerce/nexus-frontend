@@ -1,25 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import Profile from '../views/Profile.vue'
+import Products from '../views/Products.vue'
+import ProductDetail from '../views/ProductDetail.vue'
+import Cart from '../views/Cart.vue'
+import Orders from '../views/Orders.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  { path: '/', name: 'Home', component: Home },
+  { path: '/login', name: 'Login', component: Login },
+  { path: '/profile', name: 'Profile', component: Profile, meta: { requiresAuth: true } },
+  { path: '/products', name: 'Products', component: Products },
+  { path: '/products/:id', name: 'ProductDetail', component: ProductDetail },
+  { path: '/cart', name: 'Cart', component: Cart, meta: { requiresAuth: true } },
+  { path: '/orders', name: 'Orders', component: Orders, meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+// Navigation Guard
+router.beforeEach((to, from, next) => {
+  const loggedIn = localStorage.getItem('token');
+  if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
+    next('/login');
+  } else {
+    next();
+  }
+});
 
 export default router
