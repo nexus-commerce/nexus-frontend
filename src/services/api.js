@@ -1,15 +1,21 @@
-// src/services/api.js
-
 import axios from 'axios';
 
+const API_BASE_URL = process.env.VUE_APP_API_BASE_URL;
+
+if (process.env.VUE_APP_DEBUG === 'true') {
+    console.log('API Configuration:', {
+        baseURL: API_BASE_URL,
+        env: process.env.NODE_ENV
+    });
+}
+
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8000/api/v1', // <-- IMPORTANT: Change this to your actual API URL
+    baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json'
     }
 });
 
-// Interceptor to add the auth token to requests
 apiClient.interceptors.request.use(config => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -20,64 +26,99 @@ apiClient.interceptors.request.use(config => {
     return Promise.reject(error);
 });
 
+apiClient.interceptors.response.use(
+    response => response,
+    error => {
+        if (error.response && error.response.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href = '/login';
+        }
+        return Promise.reject(error);
+    }
+);
+
 export default {
-    // --- UserService ---
     login(credentials) {
-        // AuthRequest: { email, password }
         return apiClient.post('/auth/login', credentials);
     },
+    
     register(userInfo) {
         return apiClient.post('/auth/register', userInfo);
     },
+    
     getUserProfile() {
         return apiClient.get('/users/profile');
     },
-    updateUserProfile(profileData) {
-        // UpdateUserRequest: { email, first_name, last_name }
-        return apiClient.put('/users/profile', profileData);
+    
+    updateUserProfile(user, updateMask) {
+        return apiClient.patch('/users/profile', {
+            user: user,
+            update_mask: updateMask
+        });
     },
 
-    // --- ProductCatalogService ---
-    getProducts() {
-        return apiClient.get('/products');
+    getProducts(filter = '', page = 1, pageSize = 20) {
+        return apiClient.get('/products', {
+            params: { filter, page, page_size: pageSize }
+        });
     },
+    
     getProduct(id) {
         return apiClient.get(`/products/${id}`);
     },
+    
+    createProduct(product) {
+        return apiClient.post('/products', product);
+    },
+    
+    updateProduct(id, product, updateMask) {
+        return apiClient.patch(`/products/${id}`, {
+            product: product,
+            update_mask: updateMask
+        });
+    },
+    
+    deleteProduct(id) {
+        return apiClient.delete(`/products/${id}`);
+    },
 
-    // --- ShoppingCartService ---
     getCart() {
         return apiClient.get('/cart');
     },
+    
     addToCart(item) {
-        // AddItemRequest: { sku, quantity }
         return apiClient.post('/cart/items', item);
     },
+    
     updateCartItem(sku, quantity) {
-        return apiClient.patch(`/cart/items/${sku}`, { sku, quantity });
+        return apiClient.patch(`/cart/items/${sku}`, { quantity });
     },
+    
     removeCartItem(sku) {
-        // RemoveItemRequest uses sku
         return apiClient.delete(`/cart/items/${sku}`);
     },
+    
     clearCart() {
         return apiClient.delete('/cart');
     },
 
-    // --- OrderService ---
     getOrders() {
         return apiClient.get('/orders');
     },
+    
     getOrder(id) {
         return apiClient.get(`/orders/${id}`);
     },
+    
     createOrder(orderData) {
-        // CreateOrderRequest: { shipping_address, payment_method, payment_intent_id }
         return apiClient.post('/orders', orderData);
     },
 
-    // --- PaymentService ---
-    initiatePayment() {
-        return apiClient.post('/payments/initiate', {});
+    processPayment() {
+        return apiClient.post('/payments', {});
+    },
+    
+    getPayments() {
+        return apiClient.get('/payments');
     }
 };
