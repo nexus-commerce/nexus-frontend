@@ -367,7 +367,6 @@ export default {
   min-height: calc(100vh - 80px);
 }
 
-/* Page Header */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -419,7 +418,6 @@ export default {
   gap: 30px;
 }
 
-/* Profile Header Card */
 .profile-header-card {
   display: flex;
   align-items: center;
@@ -499,7 +497,6 @@ export default {
   opacity: 0.85;
 }
 
-/* Statistics Grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -599,7 +596,6 @@ export default {
   color: #2d3748;
 }
 
-/* Info Section */
 .info-section {
   background: white;
   padding: 32px;
@@ -644,7 +640,6 @@ export default {
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
 }
 
-/* View Mode */
 .view-mode {
   display: flex;
   flex-direction: column;
@@ -691,7 +686,6 @@ export default {
   border-color: #cbd5e0;
 }
 
-/* Edit Form */
 .edit-form {
   display: flex;
   flex-direction: column;
@@ -801,7 +795,6 @@ export default {
   box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
 }
 
-/* Actions Section */
 .actions-section {
   background: white;
   padding: 32px;
@@ -884,7 +877,6 @@ export default {
   background: linear-gradient(135deg, #e53935 0%, #d32f2f 100%);
 }
 
-/* Messages */
 .message {
   display: flex;
   align-items: center;
@@ -920,7 +912,6 @@ export default {
   border: 2px solid #dc3545;
 }
 
-/* Loading State */
 .loading {
   text-align: center;
   padding: 80px 20px;
@@ -929,8 +920,6 @@ export default {
   color: #718096;
 }
 
-/* Responsive Design */
-/* Tablets (768px - 1200px) */
 @media (max-width: 1200px) {
   .profile-container {
     padding: 30px;
@@ -946,7 +935,6 @@ export default {
   }
 }
 
-/* Mobile (< 768px) */
 @media (max-width: 768px) {
   .profile-container {
     padding: 20px;

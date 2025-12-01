@@ -279,7 +279,6 @@ export default {
   }
 }
 
-/* Image Section */
 .product-image-section {
   display: flex;
   flex-direction: column;
@@ -330,7 +329,6 @@ export default {
   opacity: 0.9;
 }
 
-/* Stock Badge */
 .stock-badge {
   position: absolute;
   top: 20px;
@@ -377,7 +375,6 @@ export default {
   color: white;
 }
 
-/* Category Badge */
 .category-badge {
   display: inline-flex;
   align-items: center;
@@ -394,7 +391,6 @@ export default {
   border: 2px solid rgba(102, 126, 234, 0.2);
 }
 
-/* Product Info Section */
 .product-info-section {
   display: flex;
   flex-direction: column;
@@ -443,7 +439,6 @@ export default {
   margin: 0;
 }
 
-/* Attributes Section */
 .product-attributes {
   background: white;
   padding: 24px;
@@ -496,7 +491,6 @@ export default {
   color: #2d3748;
 }
 
-/* Pricing Card */
 .product-pricing-card {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 32px;
@@ -597,7 +591,6 @@ export default {
   opacity: 0.9;
 }
 
-/* Cart Form */
 .cart-form {
   display: flex;
   flex-direction: column;
@@ -667,7 +660,6 @@ export default {
   transform: translateY(-1px);
 }
 
-/* Out of Stock Notice */
 .out-of-stock-notice {
   display: flex;
   align-items: center;
@@ -685,7 +677,6 @@ export default {
   font-weight: 600;
 }
 
-/* Message Alert */
 .message-alert {
   display: flex;
   align-items: center;
@@ -728,7 +719,6 @@ export default {
   color: #dc3545;
 }
 
-/* Back Button */
 .btn-back {
   display: inline-flex;
   align-items: center;
@@ -758,7 +748,6 @@ export default {
   transform: translateX(-4px);
 }
 
-/* Loading State */
 .loading {
   display: flex;
   flex-direction: column;
@@ -789,7 +778,6 @@ export default {
   margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .product-detail {
     gap: 40px;

@@ -115,7 +115,7 @@ export default {
         await this.fetchProducts({
           filter: this.searchFilter,
           page: this.currentPage,
-          pageSize: 6, // 2 rows of 3 products
+          pageSize: 6,
           append
         });
       } catch (error) {
@@ -126,7 +126,6 @@ export default {
     },
     
     handleSearch() {
-      // Debounce search
       if (this.searchTimeout) {
         clearTimeout(this.searchTimeout);
       }
@@ -166,7 +165,6 @@ export default {
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 }
 
-/* Page Header */
 .page-header {
   margin-bottom: 30px;
 }
@@ -286,7 +284,6 @@ export default {
   margin-bottom: 10px;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .products-page {
     padding: 30px;

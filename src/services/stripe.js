@@ -1,14 +1,15 @@
 import { loadStripe } from '@stripe/stripe-js';
+import config from '../config/environment';
 
-const STRIPE_PUBLISHABLE_KEY = process.env.VUE_APP_STRIPE_PUBLISHABLE_KEY;
+const STRIPE_PUBLISHABLE_KEY = config.stripe.publishableKey;
 
 if (!STRIPE_PUBLISHABLE_KEY) {
   console.error('⚠️ Stripe publishable key not found in environment variables!');
-  console.error('Please set VUE_APP_STRIPE_PUBLISHABLE_KEY in your .env file');
-} else if (process.env.VUE_APP_DEBUG === 'true') {
+  console.error('Please set VUE_APP_STRIPE_PUBLISHABLE_KEY in your environment');
+} else if (config.app.debug) {
   console.log('✓ Stripe Configuration:', {
     keyPrefix: STRIPE_PUBLISHABLE_KEY.substring(0, 12) + '...',
-    mode: STRIPE_PUBLISHABLE_KEY.startsWith('pk_test_') ? 'TEST' : 'LIVE'
+    mode: config.stripe.isTestMode ? 'TEST' : 'LIVE'
   });
 }
 

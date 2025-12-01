@@ -253,7 +253,6 @@ export default {
   min-height: calc(100vh - 80px);
 }
 
-/* Page Header */
 .page-header {
   display: grid;
   grid-template-columns: auto 1fr auto;

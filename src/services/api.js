@@ -1,11 +1,12 @@
 import axios from 'axios';
+import config from '../config/environment';
 
-const API_BASE_URL = process.env.VUE_APP_API_BASE_URL;
+const API_BASE_URL = config.api.baseURL;
 
-if (process.env.VUE_APP_DEBUG === 'true') {
+if (config.app.debug) {
     console.log('API Configuration:', {
         baseURL: API_BASE_URL,
-        env: process.env.NODE_ENV
+        env: config.app.env
     });
 }
 

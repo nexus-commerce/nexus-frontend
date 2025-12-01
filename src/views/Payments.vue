@@ -446,7 +446,6 @@ export default {
   padding: 0 40px 40px;
 }
 
-/* Page Header */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -495,7 +494,6 @@ export default {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
-/* Loading State */
 .loading {
   display: flex;
   flex-direction: column;
@@ -524,7 +522,6 @@ export default {
   font-size: 16px;
 }
 
-/* Summary Cards */
 .payments-summary {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -606,7 +603,6 @@ export default {
   font-weight: 800;
 }
 
-/* Filters Section */
 .filters-section {
   display: flex;
   gap: 16px;
@@ -656,7 +652,6 @@ export default {
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* Payments List */
 .payments-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -680,7 +675,6 @@ export default {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Card Status Border Colors */
 .payment-card.card-status-completed {
   border-left-color: #10b981;
 }
@@ -732,35 +726,30 @@ export default {
   letter-spacing: 0.5px;
 }
 
-/* Completed Status - Green */
 .status-completed {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
-/* Pending Status - Orange/Yellow */
 .status-pending {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
 }
 
-/* Refunded Status - Blue */
 .status-refunded {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
-/* Failed Status - Red */
 .status-fail {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
 }
 
-/* Unknown Status - Gray */
 .status-unknown {
   background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
   color: white;
@@ -844,7 +833,6 @@ export default {
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -883,7 +871,6 @@ export default {
   background-color: #379668;
 }
 
-/* No Results State */
 .no-results {
   text-align: center;
   padding: 60px 40px;
@@ -930,7 +917,6 @@ export default {
   box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1108,14 +1094,12 @@ export default {
   background-color: #0056b3;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .payments-summary {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 2 columns on tablets */
 @media (max-width: 1024px) {
   .payments-container {
     padding: 0 30px 30px;
@@ -1132,7 +1116,6 @@ export default {
   }
 }
 
-/* 1 column on mobile */
 @media (max-width: 768px) {
   .payments-container {
     padding: 0 20px 20px;

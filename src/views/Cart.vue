@@ -71,7 +71,6 @@
           <span class="summary-label">Total Items:</span>
           <span class="summary-value">{{ cart.total_items }}</span>
         </div>
-        <div class="summary-divider"></div>
         <div class="summary-row total-row">
           <span class="summary-label">Order Total:</span>
           <span class="summary-value total-amount">${{ cart.total_price.toFixed(2) }}</span>
@@ -415,11 +414,10 @@ export default {
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px;
-  height: 1035px;
+  min-height: calc(100vh - 200px);
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 }
 
-/* Page Header */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -471,7 +469,6 @@ export default {
   gap: 30px;
 }
 
-/* Cart Items Section */
 .cart-items-section {
   background: white;
   border-radius: 16px;
@@ -672,7 +669,6 @@ export default {
   box-shadow: 0 4px 12px rgba(239, 83, 80, 0.4);
 }
 
-/* Cart Summary */
 .cart-summary-card {
   background: white;
   border-radius: 16px;
@@ -815,34 +811,7 @@ textarea::placeholder {
   flex-direction: column;
   gap: 10px;
 }
-.radio-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-weight: normal;
-}
-.radio-label input[type="radio"] {
-  cursor: pointer;
-}
-.btn-order {
-  padding: 12px 24px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-}
-.btn-order:hover:not(:disabled) {
-  background-color: #218838;
-}
-.btn-order:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-}
-/* Empty Cart Styles */
+
 .empty-cart-container {
   display: flex;
   justify-content: center;
@@ -973,7 +942,6 @@ textarea::placeholder {
   text-align: left;
 }
 
-/* Responsive Empty Cart */
 @media (max-width: 768px) {
   .empty-cart-card {
     padding: 40px 24px;
@@ -1012,7 +980,7 @@ textarea::placeholder {
     font-size: 13px;
   }
 }
-/* Checkout Steps */
+
 .checkout-steps {
   display: flex;
   align-items: center;
@@ -1088,7 +1056,6 @@ textarea::placeholder {
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
 }
 
-/* Checkout Step Content */
 .checkout-step-content {
   animation: fadeIn 0.3s;
 }
@@ -1104,7 +1071,6 @@ textarea::placeholder {
   }
 }
 
-/* Payment Method Cards */
 .payment-method-card {
   display: flex;
   padding: 20px;
@@ -1159,7 +1125,6 @@ textarea::placeholder {
   color: #666;
 }
 
-/* Step Actions */
 .step-actions {
   display: flex;
   justify-content: space-between;
@@ -1212,7 +1177,6 @@ textarea::placeholder {
   box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
 }
 
-/* Loading State */
 .loading {
   text-align: center;
   padding: 60px 40px;
@@ -1221,7 +1185,6 @@ textarea::placeholder {
   font-weight: 600;
 }
 
-/* Messages */
 .message {
   display: flex;
   align-items: center;
@@ -1264,7 +1227,6 @@ textarea::placeholder {
   border: 2px solid #17a2b8;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .cart-content {
     grid-template-columns: 1fr;

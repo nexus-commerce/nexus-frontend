@@ -124,7 +124,6 @@ export default {
   border-color: rgba(66, 185, 131, 0.3);
 }
 
-/* Image Container */
 .product-image-container {
   width: 100%;
   height: 240px;
@@ -168,7 +167,6 @@ export default {
   opacity: 0.9;
 }
 
-/* Badges */
 .stock-badge {
   position: absolute;
   top: 12px;
@@ -227,7 +225,6 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Info */
 .product-info {
   padding: 20px;
   display: flex;
@@ -285,7 +282,6 @@ export default {
   min-height: 42px;
 }
 
-/* Meta Section */
 .product-meta {
   display: flex;
   flex-direction: column;
@@ -334,7 +330,6 @@ export default {
   color: #667eea;
 }
 
-/* Button */
 .btn-details {
   display: flex;
   align-items: center;
@@ -370,7 +365,6 @@ export default {
   transform: translateX(4px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .product-image-container {
     height: 200px;

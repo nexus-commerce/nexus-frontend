@@ -284,7 +284,6 @@ export default {
   padding: 0 40px 40px;
 }
 
-/* Page Header */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -333,7 +332,6 @@ export default {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
-/* Loading State */
 .loading-state {
   display: flex;
   flex-direction: column;
@@ -365,7 +363,6 @@ export default {
   font-weight: 600;
 }
 
-/* Summary Cards */
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -447,7 +444,6 @@ export default {
   font-weight: 800;
 }
 
-/* Filters Section */
 .filters-section {
   display: flex;
   gap: 16px;
@@ -497,7 +493,6 @@ export default {
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-/* Orders Grid */
 .orders-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -505,7 +500,6 @@ export default {
   margin-bottom: 20px;
 }
 
-/* Order Card */
 .order-card {
   background-color: white;
   border: 1px solid #e2e8f0;
@@ -523,7 +517,6 @@ export default {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Card Status Border Colors */
 .order-card.card-status-pending {
   border-left-color: #f59e0b;
 }
@@ -540,7 +533,6 @@ export default {
   border-left-color: #ef4444;
 }
 
-/* Card Header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -561,13 +553,6 @@ export default {
   color: #666;
   text-transform: uppercase;
   font-weight: 600;
-}
-
-.order-id .id-value {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-  font-family: monospace;
 }
 
 .status-badge {
@@ -608,7 +593,6 @@ export default {
   color: #383d41;
 }
 
-/* Card Body */
 .card-body {
   padding: 20px;
   flex-grow: 1;
@@ -662,7 +646,6 @@ export default {
   color: #555;
 }
 
-/* Order Items Preview */
 .order-items-preview {
   margin-top: 15px;
   padding-top: 15px;
@@ -716,7 +699,6 @@ export default {
   font-style: italic;
 }
 
-/* Card Footer */
 .card-footer {
   padding: 15px 20px;
   background-color: #f8f9fa;
@@ -742,7 +724,6 @@ export default {
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
 }
 
-/* No Results State */
 .no-results {
   text-align: center;
   padding: 60px 40px;
@@ -789,7 +770,6 @@ export default {
   box-shadow: 0 6px 16px rgba(108, 117, 125, 0.4);
 }
 
-/* Empty State */
 .empty-state {
   display: flex;
   justify-content: center;
@@ -866,7 +846,6 @@ export default {
   box-shadow: 0 6px 20px rgba(66, 185, 131, 0.4);
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .summary-cards {
     grid-template-columns: repeat(2, 1fr);
